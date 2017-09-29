@@ -5,9 +5,9 @@
 <form asp-controller="Cheese" asp-action="Add" method="post">
 
     <div class="form-group">
-        <label asp-for="Name"></label>
-        <input class="form-control" asp-for="Name" />
-        <span asp-validation-for="Name"></span>
+        <label asp-for="Name"></label> @* Tells ASP.NET to generate label for name property of ViewModel *@
+        <input class="form-control" asp-for="Name" /> @* Results in all input fields (name, id, type) being generated properly based on the Name attribute *@
+        <span asp-validation-for="Name"></span> @* Display error message for Name property *@
     </div>
     <div class="form-group">
         <label asp-for="Description"></label>
@@ -18,3 +18,5 @@
     <input type="submit" value="Add Cheese" />
 
 </form>
+
+@* Name & Description are based on properties of our AddCheeseViewModel *@

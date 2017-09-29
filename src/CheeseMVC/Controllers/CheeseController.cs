@@ -10,10 +10,10 @@ namespace CheeseMVC.Controllers
 
         // GET: /<controller>/
         public IActionResult Index()
-        {
+        {   
             List<Cheese> cheeses = CheeseData.GetAll();
-
-            return View(cheeses);
+            
+            return View(cheeses); // Makes 'cheeses' object directly available to the view
         }
 
         public IActionResult Add()
@@ -23,7 +23,7 @@ namespace CheeseMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(AddCheeseViewModel addCheeseViewModel)
+        public IActionResult Add(AddCheeseViewModel addCheeseViewModel) // refactored to use ViewModel object
         {
             if (ModelState.IsValid)
             {
@@ -38,7 +38,7 @@ namespace CheeseMVC.Controllers
 
                 return Redirect("/Cheese");
             }
-
+            // If model is not valid, re-render form passing in ViewModel again
             return View(addCheeseViewModel);
         }
 

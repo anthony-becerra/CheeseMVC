@@ -1,8 +1,9 @@
-@model List<CheeseMVC.Models.Cheese>
+@* Declare ViewModel we want to use  *@
+@model List<CheeseMVC.Models.Cheese>  
 
 <h1>@ViewBag.Title</h1>
 
-@if (Model.Count == 0)
+@if (Model.Count == 0) @* Model refers to the passed in List<CheeseMVC.Models.Cheese> *@
 {
     <p>No cheeses yet!</p>
 }

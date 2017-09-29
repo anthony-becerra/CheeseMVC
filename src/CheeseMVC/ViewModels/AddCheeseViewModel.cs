@@ -8,11 +8,11 @@ namespace CheeseMVC.ViewModels
 {
     public class AddCheeseViewModel
     {
-        [Required]
-        [Display(Name = "Cheese Name")]
+        [Required] // Validation - makes a field required
+        [Display(Name = "Cheese Name")] // Customize how Name property is displayed in View
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "You must give your cheese a description")]
+        [Required(ErrorMessage = "You must give your cheese a description")] // Make field required AND specify error message displayed
         public string Description { get; set; }
     }
 }
