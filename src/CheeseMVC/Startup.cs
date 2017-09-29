@@ -53,6 +53,7 @@ namespace CheeseMVC
             {
                 routes.MapRoute(
                     name: "default",
+                    // Changed default Controller to Cheese on startup.
                     template: "{controller=Cheese}/{action=Index}/{id?}");
             });
         }

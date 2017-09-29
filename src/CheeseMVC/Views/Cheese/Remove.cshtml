@@ -1,0 +1,15 @@
+﻿<h1>@ViewBag.title</h1>
+
+<form method="post">
+
+    @*Loop through our list of cheeses and create a checkbox & label for each cheese*@
+    @foreach (var cheese in ViewBag.cheeses)
+    {
+        <input type="checkbox" name="cheeseIds" id="@cheese.CheeseId" value="@cheese.CheeseId" />
+        <label  for="@cheese.CheeseId">@cheese.Name : @cheese.Description</label>
+        <br/>
+    }
+
+
+    <input type="submit" value="Remove Selected Cheese(s)" />
+</form>
